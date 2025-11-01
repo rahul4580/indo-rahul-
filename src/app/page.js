@@ -15,6 +15,7 @@ import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from "react-icons/s
 import FlowingMenu from '../components/FlowingMenu';
 import Contact from "./Contact";
 import Footer from "./component/footer";
+// public one
 
 
 
@@ -235,7 +236,7 @@ const demoItems = [
     Here's a more idiomatic Next.js/React way, using Tailwind for styling.
   */}
   <img
-    src="https://sdmntprwestus.oaiusercontent.com/files/00000000-1e80-6230-b609-1999971e7105/raw?se=2025-10-15T07%3A47%3A09Z&sp=r&sv=2024-08-04&sr=b&scid=52933cec-0302-5d5e-90d7-88caa52dca4c&skoid=b7fc319f-b93c-4fac-ba5f-14fdc3f9209f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-10-14T20%3A31%3A49Z&ske=2025-10-15T20%3A31%3A49Z&sks=b&skv=2024-08-04&sig=qBr6VyvVCTv4wZ3VVw7i8fSrJRBuFK6NaXkmY6euonc%3D" alt="Sample" className="w-full h-full object-cover rounded-xl" style={{ minHeight: 0, minWidth: 0 }} draggable={true} />
+    src="https://sdmntprwestus.oaiusercontent.com/files/00000000-1e80-6230-b609-1999971e7105/raw?se=2025-11-01T07%3A45%3A32Z&sp=r&sv=2024-08-04&sr=b&scid=a35b3a81-ae54-452d-95f1-5b1f0f681d99&skoid=1e4bb9ed-6bb5-424a-a3aa-79f21566e722&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-10-31T22%3A24%3A45Z&ske=2025-11-01T22%3A24%3A45Z&sks=b&skv=2024-08-04&sig=Vq6V739ILgEOJd%2BsYDLvi5svxn9aZsXd1NEGeB2KcHE%3D" alt="Sample" className="w-full h-full object-cover rounded-xl" style={{ minHeight: 0, minWidth: 0 }} draggable={true} />
   
   </div>
   
@@ -284,8 +285,8 @@ const demoItems = [
 
 <div style={{ position: 'relative', left: '60vw' }}>
 <TiltedCard
-  imageSrc="https://sdmntprwestus.oaiusercontent.com/files/00000000-1e80-6230-b609-1999971e7105/raw?se=2025-10-15T07%3A47%3A09Z&sp=r&sv=2024-08-04&sr=b&scid=52933cec-0302-5d5e-90d7-88caa52dca4c&skoid=b7fc319f-b93c-4fac-ba5f-14fdc3f9209f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-10-14T20%3A31%3A49Z&ske=2025-10-15T20%3A31%3A49Z&sks=b&skv=2024-08-04&sig=qBr6VyvVCTv4wZ3VVw7i8fSrJRBuFK6NaXkmY6euonc%3D"
-  altText="rahul kumar"
+  imageSrc="https://sdmntprwestus.oaiusercontent.com/files/00000000-1e80-6230-b609-1999971e7105/raw?se=2025-11-01T07%3A45%3A32Z&sp=r&sv=2024-08-04&sr=b&scid=a35b3a81-ae54-452d-95f1-5b1f0f681d99&skoid=1e4bb9ed-6bb5-424a-a3aa-79f21566e722&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-10-31T22%3A24%3A45Z&ske=2025-11-01T22%3A24%3A45Z&sks=b&skv=2024-08-04&sig=Vq6V739ILgEOJd%2BsYDLvi5svxn9aZsXd1NEGeB2KcHE%3D "
+   altText="rahul kumar"
   captionText="rahul kumar"
   containerHeight="300px"
   containerWidth="300px"
