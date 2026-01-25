@@ -24,7 +24,7 @@
     "motion": "^12.23.22",
     "next": "^16.1.4",
     "next-auth": "^5.0.0-beta.26",
-    "nodemailer": "^7.0.9",
+    "nodemailer": "^6.9.16",
     "ogl": "^1.0.11",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
