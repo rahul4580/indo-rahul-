@@ -335,12 +335,12 @@ class App {
   }
   createMedias(items, bend = 1, textColor, borderRadius, font) {
     const defaultItems = [
-      { image: `https://imgs.search.brave.com/7XvhuDC0EyIUjQBOKlfqbrUnVUmR6yiFVKuOCv-FTwA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90ZW1w/bGF0ZW1vLmNvbS9i/YW5uZXJzL3Rvb3Bs/YXRlLTM2MC1wb3Au/anBn`, text: 'Sleek ' },
-      { image: `https://imgs.search.brave.com/uPUF4jNSrZ_i73wIXy2Xi8aDfjl1IBnY3NCuSk8oDeg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMwMS5uaWNlcGFn/ZWNkbi5jb20vcGFn/ZS80OC84Mi93ZWJz/aXRlLXRlbXBsYXRl/LTQ4ODI1LmpwZw`, text: ' Pure' },
-      { image: `https://imgs.search.brave.com/QG7LOV1X5lJ8raHGJ8QH_78iGzosw8_DbSRzQvwT7DM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/ZnJhbWVyLmNvbS9j/cmVhdG9ycy1hc3Nl/dHMvX25leHQvaW1h/Z2UvP3VybD1odHRw/czovL3k0cGRnbmVw/Z3N3cWZmcHQucHVi/bGljLmJsb2IudmVy/Y2VsLXN0b3JhZ2Uu/Y29tL3RlbXBsYXRl/cy80NTM2MS8zWG5N/VThtWXVWTm5KV29v/Rmw1azQ3ZkRFLWlR/VDFaOGt5bG52Z2My/MDlXRlppUG54Zlpz/dUQ2ay5wbmcmdz0z/ODQwJnE9MTAw`, text: 'Void' },
-      { image: `https://imgs.search.brave.com/hjrR9mk_EK9n1WegDimZmrcM201sOQcFdm3lFWJ2E2E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9weC13/ZWItaW1hZ2VzOS5w/aXhwYS5jb20vandX/SVdUUFA2bTRvdlk1/d2psZkdWSjZrNUJR/OThVOXJ1ZDV5NnpD/cTFuVS9yczpmaXQ6/NjQwOjAvcTo5MC9h/SFIwY0hNNkx5OXdh/WGh3WVdOdmJTMXBi/V2N1Y0dsNGNHRXVZ/Mjl0TDJsdFlXZGxj/eTlrWlhOcFoyNXpM/ekUyTnpFd01EazVO/all0Ym1seWRtRnVZ/UzFoTFhCcGVIQmhM/WFJvWlcxbExtcHda/dz09`, text: ' Prism' },
-      { image: `https://imgs.search.brave.com/bXZOp8OaEIpdFh4rBC-OYd3Tq2E4DmjVxBMAEQcBNyk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jb2xv/cmxpYi5jb20vd3Av/d3AtY29udGVudC91/cGxvYWRzL3NpdGVz/LzIvbG91aWUtZnJl/ZS10ZW1wbGF0ZS5q/cGc`, text: 'Sparse ' },
-      { image: `https://imgs.search.brave.com/M8Vr2AnDiG8crTOlmOCblHeCXzIfE1AF6f1dQrp1Lg4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90ZW1w/bGF0ZW1vLmNvbS90/aHVtYm5haWxzLTM2/MC90bS00MzQtbWFz/b25yeS5qcGc`, text: 'Lumen' },     
+      { image: '/assets/gallery/web_dev.png', text: 'Architecture' },
+      { image: '/assets/gallery/data_viz.png', text: 'Intelligence' },
+      { image: '/assets/gallery/server.png', text: 'Infrastructure' },
+      { image: '/assets/gallery/creative.png', text: 'Elegance' },
+      { image: '/assets/gallery/web_dev.png', text: 'Precision' },
+      { image: '/assets/gallery/data_viz.png', text: 'Scale' },     
     ];
     const galleryItems = items && items.length ? items : defaultItems;
     this.mediasImages = galleryItems.concat(galleryItems);

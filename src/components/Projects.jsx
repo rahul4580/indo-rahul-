@@ -9,30 +9,40 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ProjectCard = ({ title, category, description, image, className }) => (
+const ProjectCard = ({ title, category, description, technologies, className }) => (
     <motion.div 
-        whileHover={{ scale: 0.98 }}
+        whileHover={{ y: -4 }}
         className={`group cursor-pointer project-card ${className}`}
     >
-        <div className="aspect-[4/3] bg-neutral-900 border border-neutral-800 relative overflow-hidden mb-4">
-            {/* Placeholder for project image */}
-            <div className={`absolute inset-0 bg-neutral-800 flex items-center justify-center text-neutral-600 transition-colors group-hover:bg-neutral-700`}>
-                {image ? (
-                     // eslint-disable-next-line @next/next/no-img-element
-                    <img src={image} alt={title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
-                ) : (
-                    <span>Project Preview</span>
-                )}
+        <div className="border border-black/10 dark:border-white/10 bg-white dark:bg-neutral-900 rounded-3xl p-8 md:p-10 hover:border-black/20 dark:hover:border-white/20 hover:shadow-2xl transition-all duration-500 h-full flex flex-col">
+            {/* Category Badge */}
+            <div className="mb-6">
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 dark:text-white/40">
+                    {category}
+                </span>
             </div>
-            <div className="absolute top-4 left-4">
-                 <span className="text-xs font-mono bg-black text-white px-2 py-1 uppercase">{category}</span>
+
+            {/* Title */}
+            <h3 className="text-3xl md:text-4xl font-black mb-4 tracking-tighter leading-tight text-black dark:text-white group-hover:opacity-80 transition-opacity">
+                {title}
+            </h3>
+
+            {/* Description */}
+            <p className="text-base md:text-lg text-gray-600 dark:text-white/60 font-medium leading-relaxed mb-8 flex-grow">
+                {description}
+            </p>
+
+            {/* Technologies */}
+            <div className="flex flex-wrap gap-3 pt-6 border-t border-black/5 dark:border-white/5">
+                {technologies.map((tech, idx) => (
+                    <span 
+                        key={idx}
+                        className="text-[10px] font-black uppercase tracking-[0.2em] px-4 py-2 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-full text-black dark:text-white hover:bg-black/10 dark:hover:bg-white/10 transition-colors"
+                    >
+                        {tech}
+                    </span>
+                ))}
             </div>
-        </div>
-        <h3 className="text-2xl font-bold mb-1 group-hover:underline decoration-1 underline-offset-4">{title}</h3>
-        <p className="text-gray-400 text-sm">{description}</p>
-        <div className="flex gap-2 mt-4">
-             <button className="px-4 py-1 border border-white/20 text-xs uppercase hover:bg-white hover:text-black transition-colors">React</button>
-             <button className="px-4 py-1 border border-white/20 text-xs uppercase hover:bg-white hover:text-black transition-colors">Next.js</button>
         </div>
     </motion.div>
 );
@@ -62,46 +72,52 @@ const Projects = () => {
             title: "E-commerce Dashboard",
             category: "React App",
             description: "A comprehensive admin panel for managing products, orders, and analytics with real-time data.",
-            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            technologies: ["React", "Next.js"]
         },
         {
             title: "Financial Data Visualizer",
             category: "Data Viz",
             description: "Interactive stock market visualization tool transforming complex datasets into digestible insights.",
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            technologies: ["React", "Next.js"]
         },
         {
             title: "Social Media API",
             category: "Backend",
             description: "High-performance backend API designed to handle millions of requests for a social platform.",
-            image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            technologies: ["React", "Next.js"]
         }
     ];
 
   return (
-    <section id="projects" ref={container} className="py-24 px-8 md:px-20 bg-black text-white border-t border-neutral-900">
-       <div className="text-center mb-20">
-           <div className={`inline-block border border-white/20 rounded-full px-4 py-1 text-sm uppercase tracking-widest mb-4 ${language === 'jp' ? 'font-noto' : ''}`}>
-               {t.label}
+    <section id="projects" ref={container} className="py-32 px-8 md:px-20 bg-[#fafafa] dark:bg-black text-black dark:text-white border-t border-black/5 dark:border-white/5 transition-colors duration-500">
+       <div className="max-w-7xl mx-auto">
+           <div className="text-center mb-20">
+               <div className={`inline-block border border-black/10 dark:border-white/10 rounded-full px-4 py-2 text-[10px] font-black uppercase tracking-[0.3em] mb-8 ${language === 'jp' ? 'font-noto' : ''}`}>
+                   {t.label}
+               </div>
+               <h2 className={`text-5xl md:text-7xl lg:text-8xl font-black mb-8 tracking-tighter leading-[0.9] ${language === 'jp' ? 'font-noto' : ''}`}>
+                    {language === 'en' ? <>Digital Experiences<br />& Data Narratives</> : t.title}
+               </h2>
+               <p className={`text-xl md:text-2xl text-gray-500 dark:text-neutral-400 max-w-3xl mx-auto font-medium leading-relaxed ${language === 'jp' ? 'font-noto' : ''}`}>
+                    {t.description}
+               </p>
            </div>
-           <h2 className={`text-5xl md:text-7xl font-bold mb-6 ${language === 'jp' ? 'font-noto' : ''}`}>
-                {language === 'en' ? <>Digital Experiences<br />& Data Narratives</> : t.title}
-           </h2>
-           <p className={`text-gray-400 max-w-2xl mx-auto ${language === 'jp' ? 'font-noto' : ''}`}>
-                {t.description}
-           </p>
-       </div>
 
-       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-                <ProjectCard key={index} {...project} className={language === 'jp' ? 'font-noto' : ''} />
-            ))}
-       </div>
+           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 lg:gap-8">
+                {projects.map((project, index) => (
+                    <ProjectCard key={index} {...project} className={language === 'jp' ? 'font-noto' : ''} />
+                ))}
+           </div>
 
-       <div className="flex justify-center mt-20">
-            <button className={`px-8 py-3 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors ${language === 'jp' ? 'font-noto' : ''}`}>
-                {t.explore}
-            </button>
+           <div className="flex justify-center mt-20">
+                <motion.button 
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`px-10 py-5 bg-black dark:bg-white text-white dark:text-black font-black text-xs uppercase tracking-[0.3em] rounded-full hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-colors shadow-xl ${language === 'jp' ? 'font-noto' : ''}`}
+                >
+                    {t.explore}
+                </motion.button>
+           </div>
        </div>
     </section>
   );

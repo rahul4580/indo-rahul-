@@ -3,8 +3,11 @@ export const translations = {
     nav: {
       home: "Home",
       about: "About",
+      more: "More",
       skills: "Skills",
-      love: "What I Love",
+      work: "Work",
+      projects: "Projects",
+      philosophy: "Philosophy",
       contact: "Contact",
     },
     hero: {
@@ -52,11 +55,35 @@ export const translations = {
       results_desc: "Explore how these skills translate into functional, high-performance applications.",
       view_projects: "View Projects +"
     },
-    love: {
+    philosophy: {
         label: "Passion",
         title: "What I Love to Do",
         description: "The driving forces behind my work and the things that inspire me to create exceptional digital experiences.",
         cta: "Let's Work Together →"
+    },
+    projects: {
+        label: "Portfolio",
+        title: "Digital Experiences & Data Narratives",
+        description: "A showcase of full-stack systems, interactive visualizations, and architectural solutions crafted with precision.",
+        explore: "View All Projects",
+        tech: "Tech Stack"
+    },
+    services: {
+        label: "Specializations",
+        title: "Expertise Verticals",
+        subtitle: "High-performance solutions across the digital spectrum.",
+        frontend: {
+            title: "Front End",
+            skills: ["React.js, Next.js", "Tailwind CSS", "Motion API", "Responsive UI", "Edge Performance"]
+        },
+        backend: {
+            title: "Back End",
+            skills: ["Node.js, Express", "API Design", "Auth (Clerk/Auth.js)", "PostgreSQL/Vercel", "Serverless Logic"]
+        },
+        data: {
+            title: "Statistics",
+            skills: ["Python, Pandas", "SQL Intelligence", "Data ETL", "Predictive Viz", "Business Insights"]
+        }
     },
     contact: {
       title: "Let's Connect",
@@ -170,13 +197,64 @@ export const translations = {
       cta_button: "View Analytics +"
     },
     // Add more translations as needed
+    more: {
+      title: "Explore More",
+      subtitle: "Beyond the code: Interests, Hobbies, and what keeps me inspired.",
+      hero_badge: "Life & Interests",
+      intro: {
+        title: "The Other Side",
+        text: "When I'm not coding, I'm immersing myself in different worlds—whether it's through gaming, anime, or exploring new technologies."
+      },
+      gaming: {
+        title: "Gaming",
+        text: "An avid gamer who appreciates immersive storytelling and challenging mechanics. From RPGs to competitive FPS, gaming is my ultimate reset."
+      },
+      anime: {
+        title: "Anime & Manga",
+        text: "A huge One Piece fan. The world-building and character depth inspire my own creative approach to development."
+      },
+      future: {
+        title: "Future Goals",
+        text: "Looking ahead, I want to merge my technical skills with my creative interests to build something unique."
+      },
+      cta: "Let's Chat"
+    },
+    more_languages: {
+      title: "Languages",
+      subtitle: "Connecting worlds through words.",
+      en: { name: "English", level: "Fluent", desc: "Daily driver for code & communication." },
+      jp: { name: "Japanese", level: "N5 Beginner", desc: "Learning kanji & daily conversation." },
+      hi: { name: "Hindi", level: "Native", desc: "Mother tongue." }
+    },
+    more_books: {
+      title: "Library",
+      subtitle: "Books that shaped my thinking.",
+      current_read: "Currently Reading",
+      list: [
+        { title: "Atomic Habits", author: "James Clear", desc: "Building systems for success." },
+        { title: "Clean Code", author: "Robert C. Martin", desc: "Writing maintainable software." },
+        { title: "Steve Jobs", author: "Walter Isaacson", desc: "Design & perfectionism." }
+      ]
+    },
+    more_articles: {
+      title: "Articles",
+      subtitle: "Thoughts on tech, life, and code.",
+      read_more: "Read Article",
+      list: [
+        { title: "Why I Love MERN Stack", date: "Jan 2026", snippet: "The flexibility of JavaScript across the full stack is unmatched..." },
+        { title: "My Journey into 3D Web", date: "Dec 2025", snippet: "Exploring Three.js and the future of immersive web experiences..." }
+      ]
+    },
   },
   jp: {
     nav: {
       home: "ホーム",
       about: "私について",
+      more: "もっと",
       skills: "スキル",
-      love: "私が愛すること",
+      work: "作品",
+      projects: "プロジェクト",
+      philosophy: "哲学",
       contact: "お問い合わせ",
     },
     hero: {
@@ -224,11 +302,35 @@ export const translations = {
       results_desc: "これらのスキルがどのように機能的で高性能なアプリケーションにつながるかをご覧ください。",
       view_projects: "プロジェクトを見る +"
     },
-    love: {
+    philosophy: {
         label: "情熱",
         title: "私が愛すること",
         description: "私の仕事を動かす原動力と、優れたデジタル体験を生み出すインスピレーション。",
         cta: "一緒に働きましょう →"
+    },
+    projects: {
+        label: "ポートフォリオ",
+        title: "デジタル体験とデータの物語",
+        description: "精密に構築されたフルスタックシステム、インタラクティブな可視化、建築的ソリューションのショーケース。",
+        explore: "すべてのプロジェクトを表示",
+        tech: "技術スタック"
+    },
+    services: {
+        label: "専門分野",
+        title: "専門分野の垂直展開",
+        subtitle: "デジタルスペクトル全体にわたる高性能ソリューション。",
+        frontend: {
+            title: "フロントエンド",
+            skills: ["React.js, Next.js", "Tailwind CSS", "Motion API", "レスポンシブUI", "エッジパフォーマンス"]
+        },
+        backend: {
+            title: "バックエンド",
+            skills: ["Node.js, Express", "API設計", "認証 (Clerk/Auth.js)", "PostgreSQL/Vercel", "サーバーレスロジック"]
+        },
+        data: {
+            title: "統計学",
+            skills: ["Python, Pandas", "SQLインテリジェンス", "データETL", "予測可視化", "ビジネスインサイト"]
+        }
     },
     contact: {
       title: "つながりましょう",
@@ -340,6 +442,54 @@ export const translations = {
       cta_title: "データ駆動型インサイト",
       cta_description: "データの力を解き放ち、競争上の優位性に変えましょう。",
       cta_button: "分析を見る +"
+    },
+    more: {
+      title: "もっと探索",
+      subtitle: "コードを超えて：興味、趣味、そして私にインスピレーションを与え続けるもの。",
+      hero_badge: "生活と興味",
+      intro: {
+        title: "もう一つの側面",
+        text: "コーディングをしていないときは、ゲーム、アニメ、または新しい技術の探求を通じて、さまざまな世界に没頭しています。"
+      },
+      gaming: {
+        title: "ゲーム",
+        text: "没入型のストーリーテリングとやりがいのあるメカニクスを評価する熱心なゲーマー。RPGから競争力のあるFPSまで、ゲームは私の究極のリセットです。"
+      },
+      anime: {
+        title: "アニメ & マンガ",
+        text: "ワンピースの大ファンです。世界観の構築とキャラクターの深みは、私の開発への創造的なアプローチにインスピレーションを与えてくれます。"
+      },
+      future: {
+        title: "将来の目標",
+        text: "将来的には、技術的なスキルと創造的な興味を融合させて、ユニークなものを作りたいと考えています。"
+      },
+      cta: "チャットしましょう"
+    },
+    more_languages: {
+      title: "言語",
+      subtitle: "言葉で世界をつなぐ。",
+      en: { name: "英語", level: "流暢", desc: "コードとコミュニケーションの日常。" },
+      jp: { name: "日本語", level: "N5 初級", desc: "漢字と日常会話を学習中。" },
+      hi: { name: "ヒンディー語", level: "ネイティブ", desc: "母国語。" }
+    },
+    more_books: {
+      title: "ライブラリ",
+      subtitle: "私の思考を形作った本。",
+      current_read: "現在読書中",
+      list: [
+        { title: "Atomic Habits", author: "James Clear", desc: "成功のためのシステム構築。" },
+        { title: "Clean Code", author: "Robert C. Martin", desc: "保守可能なソフトウェアの作成。" },
+        { title: "Steve Jobs", author: "Walter Isaacson", desc: "デザインと完璧主義。" }
+      ]
+    },
+    more_articles: {
+      title: "記事",
+      subtitle: "技術、人生、コードについての考え。",
+      read_more: "記事を読む",
+      list: [
+        { title: "なぜMERNスタックが好きなのか", date: "2026年1月", snippet: "フルスタック全体でのJavaScriptの柔軟性は比類のないものです..." },
+        { title: "3Dウェブへの旅", date: "2025年12月", snippet: "Three.jsの探索と没入型ウェブ体験の未来..." }
+      ]
     },
   },
 };

@@ -5,30 +5,36 @@ import { SiPython, SiMysql, SiTableau, SiPandas } from "react-icons/si";
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../utils/translations';
 
-const DataCard = ({ title, icon: Icon, capabilities, index }) => (
+const BlueprintNode = ({ title, capabilities, icon: Icon, index }) => (
   <motion.div 
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-50px" }}
-    transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-    className="bg-gray-100 dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 p-8 rounded-2xl relative overflow-hidden group"
+    initial={{ opacity: 0, scale: 0.95 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8, delay: index * 0.1 }}
+    className="relative p-10 bg-[#fafafa] dark:bg-neutral-900 border border-black/5 dark:border-white/5 rounded-[3rem] group"
   >
-    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-black/0 via-black to-black/0 dark:from-white/0 dark:via-white dark:to-white/0 scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-    
-    <div className="flex items-center gap-4 mb-6">
-      <div className="p-3 bg-black text-white dark:bg-white dark:text-black rounded-xl">
+    <div className="flex items-center gap-6 mb-10">
+      <div className="w-16 h-16 rounded-2xl bg-black text-white dark:bg-white dark:text-black flex items-center justify-center transition-all group-hover:rotate-12">
         {Icon && <Icon className="text-3xl" />}
       </div>
-      <h3 className="text-2xl font-bold uppercase tracking-wider">{title}</h3>
+      <div>
+        <div className="text-[10px] font-black uppercase tracking-[0.3em] opacity-30 mb-1">Intelligence</div>
+        <h3 className="text-2xl font-black tracking-tighter uppercase">{title}</h3>
+      </div>
     </div>
 
-    <div className="space-y-6">
-      {capabilities.map((capability, idx) => (
-        <div key={idx} className="border-l-2 border-gray-300 dark:border-neutral-700 pl-4 hover:border-black dark:hover:border-white transition-colors duration-300">
-          <h4 className="text-lg font-semibold mb-2 text-black dark:text-white">{capability.title}</h4>
-          <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{capability.description}</p>
-        </div>
-      ))}
+    <div className="space-y-8 relative">
+       {capabilities.map((cap, i) => (
+         <div key={i} className="relative pl-8 group/item">
+            <div className="absolute left-0 top-3 w-2 h-2 rounded-full border border-black/20 dark:border-white/20 group-hover/item:bg-blue-500 group-hover/item:border-blue-500 transition-colors"></div>
+            <div className="absolute left-[3px] top-5 bottom-[-20px] w-px bg-black/5 dark:bg-white/5 last:hidden"></div>
+            
+            <h4 className="text-sm font-black uppercase tracking-widest mb-2 italic">{cap.title}</h4>
+            <p className="text-gray-500 dark:text-neutral-500 text-sm font-medium leading-relaxed max-w-md">
+              {cap.description}
+            </p>
+         </div>
+       ))}
     </div>
   </motion.div>
 );
@@ -36,73 +42,57 @@ const DataCard = ({ title, icon: Icon, capabilities, index }) => (
 const DataAnalysisCapabilities = () => {
   const { language } = useLanguage();
   const t = translations[language].dataAnalysis;
-  const container = useRef(null);
 
   const dataStack = [
-    {
-      title: 'Python & Libraries',
-      icon: SiPython,
-      capabilities: t.python
-    },
-    {
-      title: 'SQL & Databases',
-      icon: SiMysql,
-      capabilities: t.sql
-    },
-    {
-      title: 'Data Visualization',
-      icon: SiTableau,
-      capabilities: t.visualization
-    },
-    {
-      title: 'Analysis & Modeling',
-      icon: SiPandas,
-      capabilities: t.modeling
-    }
+    { title: 'Python', icon: SiPython, capabilities: t.python },
+    { title: 'Databases', icon: SiMysql, capabilities: t.sql },
+    { title: 'Visualization', icon: SiTableau, capabilities: t.visualization },
+    { title: 'Modeling', icon: SiPandas, capabilities: t.modeling }
   ];
 
   return (
-    <section id="data-analysis" ref={container} className="relative z-10 py-24 px-8 md:px-20 bg-white dark:bg-black text-black dark:text-white border-t border-gray-200 dark:border-neutral-900 transition-colors duration-300">
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "0px" }}
-        transition={{ duration: 0.4 }}
-        className="mb-16"
-      >
-        <h2 className={`text-5xl md:text-7xl font-bold uppercase tracking-tighter mb-6 ${language === 'jp' ? 'font-noto' : ''}`}>
-          {t.title}
-        </h2>
-        <p className={`text-gray-600 dark:text-gray-400 max-w-2xl text-lg ${language === 'jp' ? 'font-noto' : ''}`}>
-          {t.subtitle}
-        </p>
-      </motion.div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {dataStack.map((item, index) => (
-          <DataCard 
-            key={item.title}
-            title={item.title}
-            icon={item.icon}
-            capabilities={item.capabilities}
-            index={index}
-          />
-        ))}
-      </div>
-
-      <div className="mt-16 p-8 bg-gray-100 dark:bg-white text-black flex flex-col md:flex-row justify-between items-center transition-colors duration-300 rounded-2xl">
-        <div className="mb-4 md:mb-0">
-          <h3 className={`text-2xl font-bold uppercase ${language === 'jp' ? 'font-noto' : ''}`}>{t.cta_title}</h3>
-          <p className={`text-sm opacity-70 mt-1 max-w-md ${language === 'jp' ? 'font-noto' : ''}`}>
-            {t.cta_description}
+    <section id="data-analysis" className="py-32 px-6 md:px-20 bg-[#fafafa] dark:bg-black transition-colors duration-500 overflow-hidden relative">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-32">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            className={`inline-block px-4 py-2 bg-blue-500 text-white rounded-full text-[10px] font-black tracking-[0.3em] uppercase mb-10 ${language === 'jp' ? 'font-noto' : ''}`}
+          >
+             Data Science
+          </motion.div>
+          <h2 className={`text-6xl md:text-[10rem] font-black leading-[0.8] tracking-tighter mb-10 ${language === 'jp' ? 'font-noto' : ''}`}>
+             ANALYTIC<br/>
+             <span className="text-gray-300 dark:text-neutral-800">POWER.</span>
+          </h2>
+          <p className={`text-2xl text-gray-400 dark:text-neutral-500 font-medium max-w-3xl leading-snug ${language === 'jp' ? 'font-noto' : ''}`}>
+             {t.subtitle}
           </p>
         </div>
-        <button className={`px-8 py-3 bg-black text-white font-bold uppercase tracking-wider hover:bg-gray-800 transition-colors rounded-full ${language === 'jp' ? 'font-noto' : ''}`}>
-          {t.cta_button}
-        </button>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {dataStack.map((item, i) => (
+            <BlueprintNode key={item.title} {...item} index={i} />
+          ))}
+        </div>
+
+        <div className="mt-32 p-12 bg-white dark:bg-neutral-900 border border-black/5 dark:border-white/5 rounded-[4rem] flex flex-col md:flex-row justify-between items-center gap-12 shadow-2xl">
+           <div className="max-w-xl">
+              <h3 className={`text-4xl font-black mb-4 tracking-tighter ${language === 'jp' ? 'font-noto' : ''}`}>{t.cta_title}</h3>
+              <p className={`text-lg text-gray-500 dark:text-neutral-500 font-medium ${language === 'jp' ? 'font-noto' : ''}`}>{t.cta_description}</p>
+           </div>
+           
+           <motion.button
+              whileHover={{ scale: 1.05 }}
+              className={`px-12 py-6 bg-blue-500 text-white font-black text-xs uppercase tracking-[0.3em] rounded-full shadow-2xl shadow-blue-500/20 transition-all ${language === 'jp' ? 'font-noto' : ''}`}
+           >
+              {t.cta_button}
+           </motion.button>
+        </div>
       </div>
     </section>
   );
 };
+
 
 export default DataAnalysisCapabilities;

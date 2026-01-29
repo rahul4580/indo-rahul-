@@ -1,50 +1,31 @@
 'use client';
-import React, { useEffect } from 'react';
-import Lenis from 'lenis';
+import React from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Skills from '../components/Skills';
 import WhatICanDo from '../components/WhatICanDo';
 import DataAnalysisCapabilities from '../components/DataAnalysisCapabilities';
 import WhatILove from '../components/WhatILove';
-import Contact from './Contact';
-import Footer from './component/footer'; // Keeping existing footer location as I didn't move it yet
+import Work from '../components/Work';
+import Services from '../components/Services';
+import Projects from '../components/Projects';
+import Contact from '../components/Contact';
+import Footer from '../components/Footer';
 
 export default function Home() {
-  
-  useEffect(() => {
-    const lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        direction: 'vertical',
-        gestureDirection: 'vertical',
-        smooth: true,
-        smoothTouch: false,
-        touchMultiplier: 2,
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
-    return () => {
-        lenis.destroy();
-    }
-  }, []);
-
   return (
-    <div className="bg-white dark:bg-black text-black dark:text-white min-h-screen selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black transition-colors duration-300">
+    <div className="bg-[#fafafa] dark:bg-black text-black dark:text-white min-h-screen selection:bg-blue-500 selection:text-white transition-colors duration-500 overflow-x-hidden">
       <Navbar />
       <Hero />
       <Skills />
       <WhatICanDo />
+      <Services />
+      <Work />
+      <Projects />
       <DataAnalysisCapabilities />
       <WhatILove />
       
-      <section id="contact" className="py-20 px-8 md:px-20 border-t border-neutral-900">
+      <section id="contact" className="py-20 px-8 md:px-20 border-t border-black/5 dark:border-white/5">
          <div className="flex justify-center">
             <Contact />
          </div>

@@ -19,6 +19,41 @@ body {
   background: var(--background);
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
+  cursor: none; /* Hide default cursor */
+}
+
+/* Lenis Smooth Scroll */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Staircase Transition */
+.staircase-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.staircase-panel {
+  position: relative;
+  width: 20%;
+  height: 100%;
+  background-color: #000;
 }
 
 @theme {
@@ -34,4 +69,9 @@ body {
 
 .font-noto {
   font-family: var(--font-noto-sans-jp), sans-serif;
+}
+
+/* Custom Cursor Classes */
+a, button, [role="button"] {
+  cursor: none !important;
 }
